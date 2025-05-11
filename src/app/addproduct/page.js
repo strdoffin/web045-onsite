@@ -8,7 +8,6 @@ export default function AddProductForm() {
         name: "",
         description: "",
         price: "",
-        unit: "Piece",
         image: "",
         discount: "",
         availability: true,
@@ -51,7 +50,6 @@ export default function AddProductForm() {
                 name: "",
                 description: "",
                 price: "",
-                unit: "Piece",
                 image: "",
                 discount: "",
                 availability: true,
@@ -99,14 +97,7 @@ export default function AddProductForm() {
                 className="w-full p-2 border rounded"
             />
 
-            <input
-                name="unit"
-                value={formData.unit}
-                onChange={handleChange}
-                placeholder="หน่วย"
-                className="w-full p-2 border rounded"
-            />
-
+        
             <input
                 name="image"
                 value={formData.image}
