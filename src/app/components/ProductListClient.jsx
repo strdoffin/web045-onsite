@@ -1,17 +1,10 @@
 'use client';
-
 import { useCart } from "../context/CardContext";
 import { useRouter } from "next/navigation";
-import { toast } from 'react-hot-toast';
-
+import AddToCartButton from "./AddToCartButton";
 export default function ProductListClient({ products }) {
   const { addToCart } = useCart();
   const router = useRouter();
-
-  const handleAddToCart = (product) => {
-    addToCart(product);
-    toast.success(`เพิ่ม "${product.name}" ลงตะกร้าสำเร็จ!`);
-  };
 
   return (
     <div className="p-6">
@@ -39,19 +32,8 @@ export default function ProductListClient({ products }) {
             <p className="text-green-500 font-semibold mt-2">
               {p.price} บาท
             </p>
-            <button
-              onClick={() =>
-                handleAddToCart({
-                  id: p.product_id,
-                  name: p.name,
-                  price: p.price,
-                  image: p.image,
-                })
-              }
-              className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-            >
-              เพิ่มลงตะกร้า
-            </button>
+            {/* ใช้ AddToCartButton */}
+            <AddToCartButton product={p} />
           </div>
         ))}
       </div>

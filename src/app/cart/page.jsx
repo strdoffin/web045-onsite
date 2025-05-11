@@ -2,8 +2,19 @@
 'use client';
 
 import { useCart } from "../context/CardContext";
+import { RedirectToSignIn, useUser } from '@clerk/nextjs';
+
 export default function CartPage() {
   const { cartItems, updateQuantity, removeFromCart } = useCart();
+    const { user, isLoaded } = useUser();
+
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
+
+  if (!user) {
+    return <RedirectToSignIn />;
+  }
 
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
