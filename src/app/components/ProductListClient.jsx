@@ -9,16 +9,7 @@ export default function ProductListClient({ products }) {
     const router = useRouter();
 
     return (
-        <div className="p-6 pt-[6rem]">
-            <div className="flex justify-end mb-4">
-                <button
-                    onClick={() => router.push("/cart")}
-                    className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
-                >
-                    ไปหน้าตะกร้า
-                </button>
-            </div>
-
+        <div className="p-6 pt-32">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {products.map((p) => (
                     <div
@@ -47,7 +38,7 @@ export default function ProductListClient({ products }) {
                                     image: p.image,
                                 });
                             }}
-                            className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                            className="mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
                         >
                             เพิ่มลงตะกร้า
                         </button>

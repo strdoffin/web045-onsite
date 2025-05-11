@@ -3,7 +3,6 @@
 import { useCart } from "../context/CardContext";
 import Link from "next/link";
 import { Trash2, MinusCircle, PlusCircle } from "lucide-react";
-import { useRouter } from "next/router";
 export default function CartPage() {
     const { cartItems, updateQuantity, removeFromCart } = useCart();
 
@@ -45,7 +44,12 @@ export default function CartPage() {
                             className="grid grid-cols-12 gap-4 px-6 py-4 border-b items-center"
                         >
                             <div className="col-span-6 flex items-center space-x-4">
-                                <div className="w-16 h-16 bg-gray-200 rounded flex-shrink-0"></div>
+                                <div className="w-16 h-16 bg-gray-200 rounded flex-shrink-0">
+                                    <img
+                                        src={item.image}
+                                        alt={item.id}
+                                    />
+                                </div>
                                 <div>
                                     <h2 className="font-medium text-gray-800">
                                         {item.name}
