@@ -2,10 +2,16 @@
 
 import { useCart } from "../context/CardContext";
 import { useRouter } from "next/navigation";
+import { toast } from 'react-hot-toast';
 
 export default function ProductListClient({ products }) {
   const { addToCart } = useCart();
   const router = useRouter();
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    toast.success(`เพิ่ม "${product.name}" ลงตะกร้าสำเร็จ!`);
+  };
 
   return (
     <div className="p-6 pt-[5rem]">
@@ -35,7 +41,7 @@ export default function ProductListClient({ products }) {
             </p>
             <button
               onClick={() =>
-                addToCart({
+                handleAddToCart({
                   id: p.product_id,
                   name: p.name,
                   price: p.price,
