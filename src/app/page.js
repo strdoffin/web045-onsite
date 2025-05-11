@@ -1,6 +1,6 @@
 // src/app/page.jsx
 import { supabase } from "../../lib/supabaseClient";
-import ImageSlider from "./components/ImageSlide";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ProductListClient from "./components/ProductListClient";
 
@@ -16,6 +16,7 @@ export default async function Home() {
     <>
       <Navbar/>
       <ProductListClient products={products} />
+      <Footer/>
     </>
 );
 }
