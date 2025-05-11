@@ -97,7 +97,6 @@ export default function AddProductForm() {
                 className="w-full p-2 border rounded"
             />
 
-        
             <input
                 name="image"
                 value={formData.image}
