@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
     const [search, setSearch] = useState("");
@@ -61,7 +62,7 @@ const Navbar = () => {
                             </svg>
                         </button>
                     </form>
-
+                    <UserButton showName/>
                     {/* Cart */}
                     <div className="flex items-center gap-2">
                         <Link
