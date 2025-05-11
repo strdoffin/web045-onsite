@@ -1,4 +1,6 @@
 import React from "react";
+import { ShoppingBag } from "lucide-react";
+
 
 const Navbar = () => {
   return (
@@ -39,33 +41,16 @@ const Navbar = () => {
             </button>
           </form>
 
-          <div className="flex items-center space-x-4">
-            <a href="#" className="text-white hover:text-green-200 transition">
-              เข้าสู่ระบบ
-            </a>
-            
-            <a
-              href="#"
-              className="relative text-green-500 hover:text-green-200 transition"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 inline"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.293 1.293a1 1 0 001.415 1.414L7 13zm0 0h10"
-                />
-              </svg>
-              <span className="absolute -top-2 -right-2 bg-red-500 text-xs text-white rounded-full px-1">
-                2
-              </span>
-            </a>
+          <div>
+            <div className="flex">
+              <div className="text-xl">
+                <ShoppingBag size={32} strokeWidth={1.5} />
+              </div>
+              <div>
+                <p className="text-sm">Your Cart</p>
+                <p>0$</p>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
