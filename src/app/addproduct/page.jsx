@@ -13,6 +13,7 @@ export default function AddProductForm() {
         availability: true,
         brand: "",
         category: "",
+        stock: "",
         rating: "",
     });
 
@@ -55,6 +56,7 @@ export default function AddProductForm() {
                 availability: true,
                 brand: "",
                 category: "",
+                stock: "",
                 rating: "",
             });
         }
@@ -128,6 +130,13 @@ export default function AddProductForm() {
                 value={formData.category}
                 onChange={handleChange}
                 placeholder="หมวดหมู่"
+                className="w-full p-2 border rounded"
+            />
+            <input
+                name="stock"
+                value={formData.stock}
+                onChange={handleChange}
+                placeholder="จำนวนในสต๊อก"
                 className="w-full p-2 border rounded"
             />
 
