@@ -5,6 +5,8 @@ import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { UserButton } from "@clerk/nextjs";
+
 const Navbar = () => {
     const [search, setSearch] = useState("");
     const [suggestions, setSuggestions] = useState([]);
@@ -120,6 +122,15 @@ const Navbar = () => {
                         )}
                     </div>
 
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"
+                                />
+                            </svg>
+                        </button>
+                    </form>
+                    <UserButton showName/>
                     {/* Cart */}
                     <div className="flex items-center gap-2">
                         <Link

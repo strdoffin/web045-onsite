@@ -46,7 +46,7 @@ export default function CartPage() {
                         <div className="col-span-2 text-center">ราคา</div>
                         <div className="col-span-2 text-center">จำนวน</div>
                         <div className="col-span-2 text-center">ราคารวม</div>
-                    </div>
+                    </div>s
 
                     {/* Cart items */}
                     {cartItems.map((item) => (
