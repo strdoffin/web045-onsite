@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Trash2, MinusCircle, PlusCircle } from "lucide-react";
 import { RedirectToSignIn, useUser } from "@clerk/nextjs";
 
+
 export default function CartPage() {
     const { cartItems, updateQuantity, removeFromCart } = useCart();
     const { user, isLoaded } = useUser();
@@ -165,9 +166,11 @@ export default function CartPage() {
                     >
                         กลับไปเลือกซื้อสินค้า
                     </Link>
-                            <button className="bg-green-600 text-white px-8 py-3 rounded-md hover:bg-green-700 transition-colors font-medium">
-                                ดำเนินการสั่งซื้อ
-                            </button>
+                            <Link href="/checkout">
+    <button className="bg-green-600 text-white px-8 py-3 rounded-md hover:bg-green-700 transition-colors font-medium">
+      ดำเนินการสั่งซื้อ
+    </button>
+  </Link>
                         </div>
                     </div>
                 </div>
