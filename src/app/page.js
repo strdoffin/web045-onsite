@@ -6,12 +6,14 @@ import Navbar from "./components/Navbar";
 import ProductListClient from "./components/ProductListClient";
 
 export default async function Home() {
-  const { data: products, error } = await supabase.from("products").select("*");
+    const { data: products, error } = await supabase
+        .from("products")
+        .select("*");
 
-  if (error) {
-    console.log(error);
-    return <div>เกิดข้อผิดพลาดในการโหลดสินค้า</div>;
-  }
+    if (error) {
+        console.log(error);
+        return <div>เกิดข้อผิดพลาดในการโหลดสินค้า</div>;
+    }
 
   return (
     <>

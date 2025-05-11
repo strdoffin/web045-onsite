@@ -1,19 +1,21 @@
 "use client";
 
 import { useCart } from "../context/CardContext";
-import { RedirectToSignIn, useUser } from '@clerk/nextjs';
+import Link from "next/link";
+import { Trash2, MinusCircle, PlusCircle } from "lucide-react";
+import { RedirectToSignIn, useUser } from "@clerk/nextjs";
 
 export default function CartPage() {
-  const { cartItems, updateQuantity, removeFromCart } = useCart();
+    const { cartItems, updateQuantity, removeFromCart } = useCart();
     const { user, isLoaded } = useUser();
 
-  if (!isLoaded) {
-    return <div>Loading...</div>;
-  }
+    if (!isLoaded) {
+        return <div>Loading...</div>;
+    }
 
-  if (!user) {
-    return <RedirectToSignIn />;
-  }
+    if (!user) {
+        return <RedirectToSignIn />;
+    }
 
     const total = cartItems.reduce(
         (sum, item) => sum + item.price * item.quantity,
@@ -31,7 +33,7 @@ export default function CartPage() {
                     <p className="text-xl text-gray-500">ไม่มีสินค้าในตะกร้า</p>
                     <Link
                         href="/"
-                        className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors"
+                        className="mt-4 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors"
                     >
                         กลับไปเลือกซื้อสินค้า
                     </Link>
@@ -53,7 +55,12 @@ export default function CartPage() {
                             className="grid grid-cols-12 gap-4 px-6 py-4 border-b items-center"
                         >
                             <div className="col-span-6 flex items-center space-x-4">
-                                <div className="w-16 h-16 bg-gray-200 rounded flex-shrink-0"></div>
+                                <div className="w-16 h-16 bg-gray-200 rounded flex-shrink-0">
+                                    <img
+                                        src={item.image}
+                                        alt={item.id}
+                                    />
+                                </div>
                                 <div>
                                     <h2 className="font-medium text-gray-800">
                                         {item.name}
@@ -77,7 +84,7 @@ export default function CartPage() {
                                                 Math.max(1, item.quantity - 1)
                                             )
                                         }
-                                        className="text-gray-500 hover:text-blue-600"
+                                        className="text-gray-500 hover:text-green-600"
                                     >
                                         <MinusCircle size={20} />
                                     </button>
@@ -102,7 +109,7 @@ export default function CartPage() {
                                                 item.quantity + 1
                                             )
                                         }
-                                        className="text-gray-500 hover:text-blue-600"
+                                        className="text-gray-500 hover:text-green-600"
                                     >
                                         <PlusCircle size={20} />
                                     </button>
@@ -146,13 +153,19 @@ export default function CartPage() {
 
                         <div className="flex justify-between items-center font-bold text-xl">
                             <span>ราคารวมทั้งหมด</span>
-                            <span className="text-blue-600">
+                            <span className="text-green-600">
                                 {total.toLocaleString()} บาท
                             </span>
                         </div>
-
-                        <div className="mt-6 flex justify-end">
-                            <button className="bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors font-medium">
+                        
+                        <div className="mt-6 flex justify-between">
+                            <Link
+                        href="/"
+                        className="bg-green-600 text-white px-8 py-3 rounded-md hover:bg-green-700 transition-colors font-medium"
+                    >
+                        กลับไปเลือกซื้อสินค้า
+                    </Link>
+                            <button className="bg-green-600 text-white px-8 py-3 rounded-md hover:bg-green-700 transition-colors font-medium">
                                 ดำเนินการสั่งซื้อ
                             </button>
                         </div>
