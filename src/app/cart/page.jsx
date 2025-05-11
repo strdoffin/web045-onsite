@@ -33,7 +33,7 @@ export default function CartPage() {
                     <p className="text-xl text-gray-500">ไม่มีสินค้าในตะกร้า</p>
                     <Link
                         href="/"
-                        className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors"
+                        className="mt-4 bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors"
                     >
                         กลับไปเลือกซื้อสินค้า
                     </Link>
@@ -84,7 +84,7 @@ export default function CartPage() {
                                                 Math.max(1, item.quantity - 1)
                                             )
                                         }
-                                        className="text-gray-500 hover:text-blue-600"
+                                        className="text-gray-500 hover:text-green-600"
                                     >
                                         <MinusCircle size={20} />
                                     </button>
@@ -109,7 +109,7 @@ export default function CartPage() {
                                                 item.quantity + 1
                                             )
                                         }
-                                        className="text-gray-500 hover:text-blue-600"
+                                        className="text-gray-500 hover:text-green-600"
                                     >
                                         <PlusCircle size={20} />
                                     </button>
@@ -153,13 +153,19 @@ export default function CartPage() {
 
                         <div className="flex justify-between items-center font-bold text-xl">
                             <span>ราคารวมทั้งหมด</span>
-                            <span className="text-blue-600">
+                            <span className="text-green-600">
                                 {total.toLocaleString()} บาท
                             </span>
                         </div>
-
-                        <div className="mt-6 flex justify-end">
-                            <button className="bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors font-medium">
+                        
+                        <div className="mt-6 flex justify-between">
+                            <Link
+                        href="/"
+                        className="bg-green-600 text-white px-8 py-3 rounded-md hover:bg-green-700 transition-colors font-medium"
+                    >
+                        กลับไปเลือกซื้อสินค้า
+                    </Link>
+                            <button className="bg-green-600 text-white px-8 py-3 rounded-md hover:bg-green-700 transition-colors font-medium">
                                 ดำเนินการสั่งซื้อ
                             </button>
                         </div>

@@ -26,12 +26,6 @@ export default function RootLayout({ children }) {
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <header className="flex justify-between p-2 font-semibold">
-            <h1>
-            KU KHUY
-            </h1>
-            <UserButton showName />
-          </header>
           <CartProvider>
             <Toaster position="top-right" />
             {children}
