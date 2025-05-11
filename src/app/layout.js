@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "./context/CardContext";
-import { Toaster } from 'react-hot-toast';
-
+import { Toaster } from "react-hot-toast";
+import { ClerkProvider, SignedOut, SignIn, UserButton} from "@clerk/nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,15 +21,23 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <CartProvider>
-          <Toaster position="top-right" />
-          {children}
-        </CartProvider>
-      </body>
-    </html>
+        <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <header className="flex justify-between p-2 font-semibold">
+            <h1>
+            KU KHUY
+            </h1>
+            <UserButton showName />
+          </header>
+          <CartProvider>
+            <Toaster position="top-right" />
+            {children}
+          </CartProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

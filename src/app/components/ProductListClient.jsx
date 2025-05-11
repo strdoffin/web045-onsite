@@ -1,9 +1,7 @@
-"use client";
-
+'use client';
 import { useCart } from "../context/CardContext";
 import { useRouter } from "next/navigation";
-import CartPage from "./../cart/page";
-
+import AddToCartButton from "./AddToCartButton";
 export default function ProductListClient({ products }) {
     const { addToCart } = useCart();
     const router = useRouter();
