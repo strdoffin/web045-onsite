@@ -1,5 +1,6 @@
 // src/app/page.jsx
 import { supabase } from "../../lib/supabaseClient";
+import Navbar from "./components/Navbar";
 import ProductListClient from "./components/ProductListClient";
 
 export default async function Home() {
@@ -10,5 +11,10 @@ export default async function Home() {
     return <div>เกิดข้อผิดพลาดในการโหลดสินค้า</div>;
   }
 
-  return <ProductListClient products={products} />;
+  return (
+    <>
+      <Navbar/>
+      <ProductListClient products={products} />
+    </>
+);
 }
