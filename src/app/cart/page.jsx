@@ -1,8 +1,9 @@
 "use client";
 
 import { useCart } from "../context/CardContext";
+import Link from "next/link";
 import { Trash2, MinusCircle, PlusCircle } from "lucide-react";
-
+import { useRouter } from "next/router";
 export default function CartPage() {
     const { cartItems, updateQuantity, removeFromCart } = useCart();
 
@@ -18,11 +19,14 @@ export default function CartPage() {
             </h1>
 
             {cartItems.length === 0 ? (
-                <div className="bg-gray-50 rounded-lg p-8 text-center">
+                <div className="bg-gray-50 rounded-lg p-8 text-center flex flex-col">
                     <p className="text-xl text-gray-500">ไม่มีสินค้าในตะกร้า</p>
-                    <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
+                    <Link
+                        href="/"
+                        className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors"
+                    >
                         กลับไปเลือกซื้อสินค้า
-                    </button>
+                    </Link>
                 </div>
             ) : (
                 <div className="bg-white rounded-lg shadow-md">
