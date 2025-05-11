@@ -12,90 +12,40 @@ const Navbar = () => {
             </span>
           </a>
 
-          <form className="max-w-md mx-auto">
-            <label
-              htmlFor="search"
-              className="mb-2 text-sm font-medium text-gray-900 sr-only"
+          <form className="flex items-center w-[400px] max-w-full">
+            <input
+              type="search"
+              placeholder="Search the web"
+              className="rounded-l-full bg-gray-50 border border-gray-200  px-5 py-2 w-full text-gray-700 outline-none focus:ring-0 focus:ring-offset-0"
+            />
+            <button
+              type="submit"
+              className="bg-green-500 hover:bg-green-700 text-white rounded-r-full px-4 py-2.5 flex items-center transition"
+              aria-label="Search"
             >
-              ค้นหา
-            </label>
-            <div className="relative">
-              {/* ไอคอนค้นหา */}
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <svg
-                  className="w-5 h-5 text-gray-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"
-                  />
-                </svg>
-              </div>
-              {/* input type="search" */}
-              <input
-                type="search"
-                id="search"
-                className="block w-full p-4 pl-[5rem] text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-green-500 focus:border-green-500"
-                placeholder="ค้นหาสินค้า..."
-                required
-              />
-              <button
-                type="submit"
-                className="text-white absolute right-2.5 bottom-2.5 bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2"
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
               >
-                ค้นหา
-              </button>
-            </div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"
+                />
+              </svg>
+            </button>
           </form>
 
-          {/* Menu */}
-          <div className="hidden md:flex space-x-6">
-            <a
-              href="#"
-              className="text-green-500 hover:text-green-200 transition"
-            >
-              หน้าแรก
-            </a>
-            <a
-              href="#"
-              className="text-green-500 hover:text-green-200 transition"
-            >
-              สินค้า
-            </a>
-            <a
-              href="#"
-              className="text-green-500 hover:text-green-200 transition"
-            >
-              โปรโมชั่น
-            </a>
-            <a
-              href="#"
-              className="text-green-500 hover:text-green-200 transition"
-            >
-              บทความ
-            </a>
-            <a
-              href="#"
-              className="text-green-500 hover:text-green-200 transition"
-            >
-              ติดต่อเรา
-            </a>
-          </div>
-
-          {/* Right Side (Login/Cart) */}
           <div className="flex items-center space-x-4">
             <a href="#" className="text-white hover:text-green-200 transition">
               เข้าสู่ระบบ
             </a>
             <a
               href="#"
-              className="relative text-white hover:text-green-200 transition"
+              className="relative text-green-500 hover:text-green-200 transition"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
