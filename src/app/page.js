@@ -1,5 +1,6 @@
 // src/app/page.jsx
 import { supabase } from "../../lib/supabaseClient";
+import ImageSlider from "./components/ImageSlide";
 import Navbar from "./components/Navbar";
 import ProductListClient from "./components/ProductListClient";
 
