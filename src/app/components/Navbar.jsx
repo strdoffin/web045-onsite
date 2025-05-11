@@ -9,12 +9,12 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
           {/* Logo */}
           <a href="/" className="flex items-center space-x-2">
-            <span className="text-green-500 font-bold text-lg">
+            <span className="text-green-500 font-bold text-xs">
               KU E-commerce
             </span>
           </a>
 
-          <form className="flex items-center w-[400px] max-w-full">
+          <form className="flex items-center w-[700px] max-w-full">
             <input
               type="search"
               placeholder="Search the web"
@@ -41,15 +41,11 @@ const Navbar = () => {
             </button>
           </form>
 
-          <div>
-            <div className="flex">
-              <div className="text-xl">
-                <ShoppingBag size={32} strokeWidth={1.5} />
-              </div>
-              <div>
-                <p className="text-sm">Your Cart</p>
-                <p>0$</p>
-              </div>
+          <div className="flex items-center gap-2">
+            <ShoppingBag size={32} strokeWidth={1} />
+            <div className="text-xs">
+              <p className="text-gray-500">YOUR CARD</p>
+              <p className="font-semibold"><span className="text-green-600">0.00</span> Bath</p>
             </div>
           </div>
         </div>
