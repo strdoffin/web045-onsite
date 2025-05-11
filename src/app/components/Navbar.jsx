@@ -6,18 +6,18 @@ const Navbar = () => {
   return (
     <div className="">
       <nav className="fixed top-0 left-0 w-full z-50 shadow-md">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 ">
           {/* Logo */}
           <a href="/" className="flex items-center space-x-2">
-            <span className="text-green-500 font-bold text-xs">
-              KU E-commerce
+            <span className="w-[64px] h-[64px]">
+              <img src="https://sdmntprcentralus.oaiusercontent.com/files/00000000-6dc8-61f5-9260-503b298ade46/raw?se=2025-05-11T06%3A34%3A13Z&sp=r&sv=2024-08-04&sr=b&scid=00000000-0000-0000-0000-000000000000&skoid=04233560-0ad7-493e-8bf0-1347c317d021&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-10T20%3A30%3A44Z&ske=2025-05-11T20%3A30%3A44Z&sks=b&skv=2024-08-04&sig=VzgRWqpCHEKHQBzK1XlWftSxSpZGnbp6ARqtsuUe8Cg%3D" alt="" />
             </span>
           </a>
 
-          <form className="flex items-center w-[700px] max-w-full">
+          <form className="flex items-center w-[200px] max-w-full sm:w-[400px] md:w-[700px]">
             <input
               type="search"
-              placeholder="Search the web"
+              placeholder="ค้นหาสินค้า..."
               className="rounded-l-full bg-gray-50 border border-gray-200  px-5 py-2 w-full text-gray-700 outline-none focus:ring-0 focus:ring-offset-0"
             />
             <button
