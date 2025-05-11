@@ -8,7 +8,7 @@ export default function ProductListClient({ products }) {
   const router = useRouter();
 
   return (
-    <div className="p-6">
+    <div className="p-6 pt-[5rem]">
       <div className="flex justify-end mb-4">
         <button
           onClick={() => router.push("/cart")}
